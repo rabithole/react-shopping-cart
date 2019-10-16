@@ -13,7 +13,11 @@ function App() {
 
 	const addItem = item => {
 		// add the given item to the cart
+		console.log('add item works');
+		
 	};
+
+	// console.log(data);
 
 	return (
 		<div className="App">
