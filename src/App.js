@@ -19,9 +19,9 @@
 		};
 
 		// console.log(data);
-
+					// ProductContext.Provider creates context and passes props to all components that it is wrapping. ProductContext.Provider is created in the context files inside the contexts folder. 
 		return (
-			<ProductContext.Provider value={{ products, addItem }}>
+			<ProductContext.Provider value={{ products, addItem }}> 
 				<CartContext.Provider value={cart}>
 					<div className="App">
 						<Navigation /> 
