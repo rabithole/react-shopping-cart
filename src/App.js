@@ -13,16 +13,22 @@
 		const [products] = useState(data);
 		const [cart, setCart] = useState([]);
 
+		console.log(cart);
+
 		const addItem = item => {
 			// add the given item to the cart
 			setCart([item, ...cart])
 		};
 
+		const removeItem = item => {
+			console.log('Cart Button');
+		}
+
 		// console.log(data);
 					// ProductContext.Provider creates context and passes props to all components that it is wrapping. ProductContext.Provider is created in the context files inside the contexts folder. 
 		return (
 			<ProductContext.Provider value={{ products, addItem }}> 
-				<CartContext.Provider value={cart}>
+				<CartContext.Provider value={{ cart, removeItem }}>
 					<div className="App">
 						<Navigation /> 
 
