@@ -13,27 +13,13 @@
 		const [products] = useState(data);
 		const [cart, setCart] = useState([]);
 
-		// console.log(cart);
-
 		const addItem = item => {
 			// add the given item to the cart
 			setCart([item, ...cart])
 		};
 
-		// const removeItem = item => {
-		// 	console.log('Cart Button');
-		// 	// setCart([item, ])
-		// }
-
 		const removeItem = (itemId) => {
-			console.log('item id', itemId, 'cart', cart)
 			setCart(cart.filter(item => itemId !== item.id));
-			console.log(cart)
-
-			// const updatedCart = cart.filter(item => item );
-			// console.log(updatedCart)
-			// setCart(updatedCart);
-
 		};
 
 		return (
