@@ -25,10 +25,15 @@
 		// 	// setCart([item, ])
 		// }
 
-		const removeItem = item => {
-			setCart(cart.filter(item => item.id ));
+		const removeItem = (itemId) => {
+			console.log('item id', itemId, 'cart', cart)
+			setCart(cart.filter(item => itemId !== item.id));
+			console.log(cart)
+
+			// const updatedCart = cart.filter(item => item );
 			// console.log(updatedCart)
-			// setCart([updatedCart]);
+			// setCart(updatedCart);
+
 		};
 
 		return (
