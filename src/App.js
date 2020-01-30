@@ -13,17 +13,28 @@
 		const [products] = useState(data);
 		const [cart, setCart] = useState([]);
 
+		// console.log(cart);
+
 		const addItem = item => {
 			// add the given item to the cart
 			setCart([item, ...cart])
 		};
 
-		// console.log(data);
+		// const removeItem = item => {
+		// 	console.log('Cart Button');
+		// 	// setCart([item, ])
+		// }
+
+		const removeItem = itemId => {
+			const updatedCart = cart.filter(item => item.id !== itemId );
+			console.log(updatedCart)
+			setCart([updatedCart]);
+		};
 
 		return (
 			<ProductContext.Provider value={{ products, addItem }}>
 					{ /* value is a prop that context uses */ }
-				<CartContext.Provider value={cart}>
+				<CartContext.Provider value={{ cart, removeItem }}>
 					<div className="App">
 						<Navigation /> 
 
