@@ -1,5 +1,8 @@
 import { createContext } from "react";
+// imports the context module
 
-// create our context "namespace" and export it as a
-// named variable so we can import { ThemeContext } elsewhere
+const context = createContext();
+console.log(context); // Logging the createContext object. 
+
 export const ProductContext = createContext();
+// This creates the data object.

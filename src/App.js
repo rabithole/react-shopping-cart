@@ -22,6 +22,7 @@
 
 		return (
 			<ProductContext.Provider value={{ products, addItem }}>
+					{ /* value is a prop that context uses */ }
 				<CartContext.Provider value={cart}>
 					<div className="App">
 						<Navigation /> 

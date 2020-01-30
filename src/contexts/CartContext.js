@@ -1,5 +1,6 @@
-import { createContext } from "react";
+import { createContext } from "react"; 
+// imports the context module
 
-// create our context "namespace" and export it as a
-// named variable so we can import { ThemeContext } elsewhere
+
 export const CartContext = createContext();
+// This creates the data object. 
