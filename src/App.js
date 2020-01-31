@@ -16,7 +16,8 @@
 		const addItem = item => {
 			// add the given item to the cart
 			setCart([item, ...cart])
-			localStorage.setItem('cart', item.id)
+			localStorage.setItem(item.title, JSON.stringify(item))
+			// console.log(item.title)
 		};
 
 		const removeItem = (itemId) => {
