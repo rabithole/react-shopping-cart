@@ -13,11 +13,22 @@
 		const [products] = useState(data);
 		const [cart, setCart] = useState([]);
 
+		// const persist = () => {
+		// 	setCart(JSON.parse(localStorage.getItem('key')))
+		// };
+
+		// persist();
+
 		const addItem = item => {
 			// add the given item to the cart
 			setCart([item, ...cart])
-			localStorage.setItem(item.title, JSON.stringify(item))
+			// localStorage.setItem(item.title, JSON.stringify(item))
 			// console.log(item.title)
+
+			localStorage.setItem('cart', JSON.stringify({...cart}))
+			console.log(JSON.parse(localStorage.getItem('cart' )))
+			// setCart(JSON.parse(localStorage.getItem(item.title)))
+			// var user = JSON.parse(localStorage.getItem('user'));
 		};
 
 		const removeItem = (itemId) => {
