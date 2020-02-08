@@ -1,4 +1,4 @@
-	import React, { useState } from 'react';
+	import React, { useState, useEffect } from 'react';
 	import { Route } from 'react-router-dom';
 	import data from './data';
 	import { ProductContext } from './contexts/ProductContext';
@@ -11,7 +11,7 @@
 
 	function App(props) {
 		const [products] = useState(data);
-		const [cart, setCart] = useState([]);
+		const [cart, setCart] = useState(() => !JSON.parse(localStorage.getItem('cart')) ? [] : JSON.parse(localStorage.getItem('cart')));
 
 		// const persist = () => {
 		// 	setCart(JSON.parse(localStorage.getItem('key')))
@@ -22,14 +22,14 @@
 		const addItem = item => {
 			// add the given item to the cart
 			setCart([item, ...cart])
-			// localStorage.setItem(item.title, JSON.stringify(item))
-			// console.log(item.title)
-
-			localStorage.setItem('cart', JSON.stringify({...cart}))
-			console.log(JSON.parse(localStorage.getItem('cart' )))
-			// setCart(JSON.parse(localStorage.getItem(item.title)))
-			// var user = JSON.parse(localStorage.getItem('user'));
 		};
+
+		useEffect(() => {
+			localStorage.setItem('cart', JSON.stringify(cart))
+		}, [cart]);
+
+		console.log(JSON.parse(localStorage.cart));
+		console.log(localStorage)
 
 		const removeItem = (itemId) => {
 			setCart(cart.filter(item => itemId !== item.id));
