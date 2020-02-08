@@ -13,12 +13,6 @@
 		const [products] = useState(data);
 		const [cart, setCart] = useState(() => !JSON.parse(localStorage.getItem('cart')) ? [] : JSON.parse(localStorage.getItem('cart')));
 
-		// const persist = () => {
-		// 	setCart(JSON.parse(localStorage.getItem('key')))
-		// };
-
-		// persist();
-
 		const addItem = item => {
 			// add the given item to the cart
 			setCart([item, ...cart])
